@@ -1,0 +1,72 @@
+Request Headers
+User-Agent: “PostmanRuntime/7.26.10”
+Describes the browser, or tool that’s making the call. User agent is PostMan making the request to the API. 
+
+Accept: */*
+Accept header is a request type header. it is used to inform the server by the client that which content type is understandable by the client expressed as MIME-types.
+if the accept header is not present, the server assumes that the client accepts all types of media.
+
+Postman-Token: 3e68d8df-c728-4570-982e-05be9d39a1f6
+allow requests to authenticate using an access key, such as a JSON Web Token (JWT). 
+Host: www.googleapis.com
+were is the request going to.
+
+Accept-Encoding: “gzip, deflate, br”
+How data is encoded.
+advertises which content encoding, usually a compression algorithm, the client is able to understand.
+gzip, deflate and br are copression formats.
+
+
+Connection: keep-alive
+is an instruction that allows a single TCP connection to remain open for multiple HTTP requests/responses.
+Enabling the keep-alive header allows you to serve all web page resources over a single connection. Keep-alive also 
+reduces both CPU and memory usage on your server.
+
+Response Headers
+Content-Type: application/json; charset=UTF-8
+-Content type of the payload coming back as an application json format, using a characters of UTF-8.
+
+The Vary HTTP response header determines how to match future request headers to decide whether a
+cached response can be used rather than requesting a fresh one from the origin serve
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+
+Content-Encoding: gzip
+Gzip is a data compression algorithm capable of compressing and decompressing files quickly.
+Web servers use gzip to reduce the total amount of data transferred to clients.
+
+Date: Sun, 31 Jan 2021 01:17:47 GMT
+date of response
+
+Server: ESF
+-Type of server.
+Everyware Software Framework (ESF)
+used as an internal networking tool between API services.
+ 
+Cache-Control: private
+Indicates that all or part of the response message is intended for a single user and MUST NOT be cached by a shared cache, such as a proxy server.
+
+X-XSS-Protection: 0
+
+X-Frame-Options: SAMEORIGIN
+is a feature of Internet Explorer, Chrome and Safari that stops pages from loading when they detect reflected cross-site scripting (XSS) attacks. 
+
+X-Content-Type-Options: nosniff
+- security type protection
+HTTP header marker used by the server to indicate that the MIME types advertised in the Content-Type headers should not be changed and be followed.
+
+Alt-Svc: h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443";
+ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v=“46,43"
+
+-The Alt-Svc header is used to list alternate ways to reach a website. an alternative service is defined by a protocal/host/port combination.
+Alt-Svc: <protocol-id>=<alt-authority>; ma=<max-age>
+port 443: how secure transfers are dine. HTTP/3 Open external link draft 29 is identified using the label "h3-29".ma=2592000:the number of 
+seconds for which the alternative service is considered fresh.h3-Q050/ h3-Q046/ h3-Q043: Q or T distinguishes the type of handshake used (Q for the QUIC_CRYPTO handshake, T for the QUIC+TLS// handshake),
+and the two digits at the end contain the numeric value of the transport version used.Vary HTTP response header v=“46,43"
+
+Transfer-Encoding: chunked
+- chunked encoded
+Chunked transfer encoding is a streaming data transfer mechanism.
+ Data stream is divided into a series of non-overlapping "chunks".
+ The chunks are sent out and received independently of one another.
