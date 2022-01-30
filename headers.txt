@@ -1,0 +1,52 @@
+Request Headers
+User-Agent: PostmanRuntime/7.29.0
+-describes the browser or tool thats making the call, software product used by original client
+Accept: */*
+- defines the content type the client accepts, or expects to be returned by the server.
+Postman-Token: 1741f4a1-73a0-4c79-b0c8-579d0d110270
+- custum token 
+Host: www.googleapis.com
+- where is the data going too
+Accept-Encoding: gzip, deflate, br
+- how the data is encoded. indicate the acceptable media types, languages and characters sets on the client
+Connection: keep-alive
+- type of connection wether keep alive or closed
+
+
+Response Headers
+
+Content-Type: application/json; charset=UTF-8
+-provide information about the structure, encoding and size of the message  body.
+
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+-describes the parts of the request message aside from the method and URL that influenced the content of the response it occurs in.
+
+Content-Encoding: gzip
+- indicates that the uploaded object is gzip-compressed
+Date: Sun, 30 Jan 2022 03:15:43 GMT
+- date of response. used to time stamp the request/ response mesage
+Server: ESF
+- type of server, in this case Enterprise Server External Security Facility
+Cache-Control: private
+- HTTP header used to specify browser caching policies in both client requests and server responses.
+
+X-XSS-Protection: 0
+-a security header to protect from cross-site scripting vulnerabilities.
+X-Frame-Options: SAMEORIGIN
+- header can be used to indicate whether or not a browser should be allowed to render a page in a <frame>, <iframe>, <embed> or <object>.
+X-Content-Type-Options: nosniff
+- the header is a marker used by the server to indicate that the MIME types advertised in the Content-Type headers should be followed and not be changed.
+
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+-HTTP header allows a server to indicate that another network location can be treated as authoritative for that origin when making future requests.
+-Alt-Svc: <protocol-id>=<alt-authority>; ma=<max-age>
+<protocol-id>=: The ALPN protocol identifier. Examples include h2 for HTTP/2 and h3-25 for draft 25 of the HTTP/3 protocol
+<alt-authority>;: The quoted string specifying the alternative authority which consists of an optional host override, a colon, and a mandatory port number.
+ma=<max-age>: The number of seconds for which the alternative service is considered fresh.
+quic=":443": QUIC Protocol udp/443 QUIC (Quick UDP Internet Connections, pronounced quick) is an experimental transport layer network protocol developed by Google
+
+
+Transfer-Encoding: chunked
+- used to break the response into smaller parts with transfer encoding: chunked value, which allows for streaming of response to the client instead of one big payload.
